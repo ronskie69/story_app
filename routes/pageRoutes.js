@@ -83,6 +83,11 @@ router.get('/stories/:page', (req, res) => {
                         next = true
                     }
 
+                    if(stories.length < 1){
+                       res.redirect('/mystory/stories');
+                       return
+                    }
+
                     res.render('pages/stories', {
                         myRoutes: session.email && session.isAuth ? profile : main,
                         stories: session.stories && session.isAuth ? session.stories : stories,
