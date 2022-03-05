@@ -1,0 +1,10 @@
+.row {
+    margin-top: 120px;
+}
+#error_password {
+    display: none;
+    transition: .4s;
+}
+.showError {
+    display: block;
+}

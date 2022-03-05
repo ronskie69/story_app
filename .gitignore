@@ -1,0 +1,4 @@
+/node_modules
+/public/bootstrap
+/public/fontawesome
+.env

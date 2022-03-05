@@ -1,0 +1,25 @@
+.navbar {
+    background-color: #fff;
+    height: fit-content;
+    color: #000;
+}
+.navbar
+.navbar-toggler-icon {
+    color: #000;
+}
+.navbar 
+.navbar-brand img {
+    height: 75px;
+    width: 120px;
+    filter: contrast(200%);
+}
+.navbar
+.nav-link {
+    color: #000;
+}
+
+@media only screen and (max-width:920px) {
+    .navbar {
+        box-shadow: 7px 1px 9px #ccc;
+    }
+}

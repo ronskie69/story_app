@@ -1,0 +1,23 @@
+<% if(stories.length > 0) { %>
+    <% stories.map(story => {%>
+        <div 
+            class="card"
+            data-sender="<%=story.senderEmail%>"
+            data-id="<%=story.id%>" 
+            id="<%= story.id %>"
+        >
+            <div class="card-body">
+                <h5 class="card-title"><%=story.title%></h5>
+                <p 
+                    class="card-text accordionate" 
+                    id="accordion">
+                    <%=story.story%>
+                    <p class="toggle-accordion">Read More</p>
+                </p>
+                <p class="card-text"><small class="text-muted">Sent by <%=story.nickname %></small></p>
+            </div>
+        </div>
+    <% }) %>
+<% }  else { %>
+    <h5 class="text-center lead">No stories added yet.</h5>
+<% } %>

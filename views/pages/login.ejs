@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../components/header') %>
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Login - MyStory</title>
+</head>
+<body>
+    <%- include('../components/navbar') %>
+    <div class="container-fluid">
+        <div class="row text-dark justify-content-center align-items-center">
+            <form class="form" method="POST" id="form_login" autocomplete="off">
+                <h4 class="text-center mt-2">MyStory</h4>
+                <hr/>
+                <h5 class="text-center">Login Your Account</h5>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1" class="mt-2">Email address</label>
+                    <input 
+                      type="email" 
+                      class="form-control"
+                      name="email"
+                      id="email"
+                      required
+                      placeholder="Enter your email address here..."
+                    >
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput2">Password</label>
+                    <input 
+                      type="password"
+                      name="password" 
+                      class="form-control" 
+                      id="password"
+                      required 
+                      placeholder="Enter your password here..."
+                    >
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" value="Login" class="form-control btn-sm btn-primary" id="submitBtn">
+                    <a 
+                      href="/mystory/story"
+                      class="btn btn-sm btn-success form-control mt-1"
+                      style="text-decoration: none;"
+                    >
+                      Continue Free Version
+                    </a>
+                  </div>
+                  <p class="actions text-center">
+                    No account?
+                    <a href="/mystory/register">Register</a>
+                    here.
+                </p>
+              </form>
+        </div>
+    </div>
+</body>
+<script src="/js/forms.js"></script>
+</html>

@@ -1,0 +1,27 @@
+.form {
+    margin-bottom: 20px;
+}
+.card {
+    height: fit-content;
+    position: relative;
+    margin-top: 10px;
+    box-shadow: 6px 1px 9px #ddd;
+}
+.row {
+    margin-top: 120px;
+    margin-bottom: 20px;
+}
+.accordionate {
+    overflow: hidden;
+    max-height: 70px;
+    transition: 0.3s ease-in-out;
+}
+.activeReadable {
+    max-height: fit-content;
+}
+.toggle-accordion {
+    cursor: pointer;
+    color: #b8b0b0;
+    font-size: 13px;
+    text-decoration: underline;
+}

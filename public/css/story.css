@@ -1,0 +1,15 @@
+.hide{
+    display: none;
+    transition: .3s;
+}
+#toggle_cards {
+    display: none;
+}
+@media screen and (max-width: 650px) {
+    #all_my_stories {
+        margin-top: 40px;
+    }
+    #toggle_cards {
+        display: block;
+    }
+}

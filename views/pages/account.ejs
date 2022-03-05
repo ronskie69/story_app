@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../components/header') %>
+    <link rel="stylesheet" href="/css/account.css">
+    <title>My Account</title>
+</head>
+<body>
+    <%- include('../components/navbar') %>
+    <div class="container">
+        <div class="row text-dark d-flex flex-column">
+            <h4 class="text-center">My Account</h4>
+            <form class="form mt-2 container" autocomplete="off" id="account_form" method="POST">
+                <div class="form-group">
+                    <label for="email" class="mt-2">Email address</label>
+                    <input 
+                      type="email" 
+                      class="form-control" 
+                      readonly
+                      id="email" 
+                      value="<%=email%>"
+                      name="email"
+                      required
+                    >
+                    <small class="text-secondary">Your email address is permanent. You cannot change it anymore.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Old Password</label>
+                    <input 
+                      type="password" 
+                      class="form-control"
+                      name="old_password"
+                      id="old_password"
+                      required
+                      placeholder="Enter your old password here..."
+                    >
+                  </div>
+                  <div class="form-group">
+                    <label for="password">New Password</label>
+                    <input 
+                      type="password"
+                      name="new_password"
+                      class="form-control"
+                      required
+                      id="new_password"
+                      placeholder="Enter your new password here..."
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Retype Password</label>
+                    <input 
+                      type="password" 
+                      class="form-control" 
+                      name="final_password"
+                      id="final_password"
+                      required
+                      placeholder="Retype your password here..."
+                    >
+                    <small id="error_password" class="text-danger">Passwords didn't matched!</small>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <input type="reset" class="btn btn-danger" id="resetBtn">
+                    <input type="submit" value="Save Changes" class="btn btn-primary" id="submitBtn">
+                  </div>
+              </form>
+        </div>
+    </div>
+</body>
+<script src="/js/api.js"></script>
+<script src="/js/account.js"></script>
+</html>

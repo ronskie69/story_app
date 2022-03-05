@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../components/header') %>
+    <link rel="stylesheet" href="/css/stories.css">
+    <title>Stories</title>
+</head>
+<body>
+    <%- include('../components/navbar') %>
+    <div class="container">
+        <div class="row text-dark">
+            <div class="col-12" id="all_stories">
+                <h4 class="text-center">All Stories</h4>
+                <form class="form" method="GET" action="/mystory/stories">
+                    <div class="input-group">
+                        <button class="input-group-prepend input-group-text" type="submit">
+                            <i class="fas fa-search input-group-addon"></i>
+                        </button>
+                        <input 
+                                type="search" 
+                                name="search_query"
+                                class="form-control"
+                                placeholder="Search by sender's name"
+                            />
+                    </div>
+                </form>
+                <%-include('../components/cards')%>
+                <div class="d-flex justify-content-between mt-3">
+                    <% if (prev){ %> 
+                        <a 
+                            id="prev"
+                            data-page="<%=page%>"
+                            class="text-primary"
+                            style="text-decoration: underline;">
+                            Previous
+                        </a>
+                    <% } %>
+                    <% if (next){ %>
+                        <a 
+                            id="next"
+                            data-page="<%=page%>"
+                            class="text-primary"
+                            style="text-decoration: underline;">
+                            Next
+                        </a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/js/stories.js"></script>
+</html>

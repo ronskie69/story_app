@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./components/header') %>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <title>MyStory</title>
+</head>
+<body>
+    <%- include('./components/navbar') %>
+    <div class="container-fluid">
+        <div class="row text-dark justify-content-center align-items-center flex-column">
+          <img src="/images/logoz.png" class="brand"/>
+          <div class="d-flex links mt-2">
+            <a href="/mystory/stories" class="btn btn-sm btn-dark text-light" style="text-decoration: none;">View Stories</a>
+            <a href="/mystory/login" class="btn btn-sm btn-dark text-light" style="text-decoration: none;">Send Story</a>
+            <a href="/mystory/register" class="btn btn-sm btn-dark text-light" style="text-decoration: none;">Join Us</a>
+          </div>
+          <%- include('./components/footer') %>
+        </div>
+    </div>
+</body>
+<script>
+  $(document).ready(function(){
+    $('.navbar-toggler').click(function(){
+      // alert("hello")
+      console.log($(this).attr('data-target'))
+    })
+  })
+</script>
+</html>
