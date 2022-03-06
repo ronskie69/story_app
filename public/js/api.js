@@ -1,4 +1,5 @@
 function sendDataToCRUD(route, data){
+    $('#btnCreateStory').attr('disabled', true).val("Saving...");
     $.ajax({
         url:'https://storynogan.herokuapp.com/crud/'+route,
         method: 'POST',
