@@ -17,6 +17,18 @@ $(document).ready(function(){
 
     $('#form_storu').submit(function(e){
         e.preventDefault();
+        
+        if($('#_nickname').val().length > 18){
+            //$('#form_storu').trigger('reset')
+            $('#_nickname').val("");
+            return Swal.fire({ 
+                title: 'Nickname too long!',
+                text: 'Nickname length should be below 18 characters.',
+                icon: 'warning'
+            })
+        }
+
+        localStorage.setItem("nickname", $('#_nickname').val());
 
         let newStory = {
             title: $('#_title').val(),
