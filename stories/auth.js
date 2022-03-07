@@ -26,24 +26,27 @@ stories.post('/register', (req, res) => {
 
     const { email, password } = req.body
 
-    bcrypt.hash(password, 10, (err, hashed) => {
-        if(err) return res.status(404).send('Failed to register!');
-        const newUser = new Users({
-            email,
-            password: hashed
+    Users.findOne({ email}, (err, user) => {
+        if(err) return res.status(404).send('Unable to register!');
+        if(user) return res.status(401).send('Email is already taken!');
+        bcrypt.hash(password, 10, (err, hashed) => {
+            if(err) return res.status(404).send('Failed to register!');
+            const newUser = new Users({
+                email,
+                password: hashed
+            });
+            newUser.save((err, result) => {
+                if(err) {
+                    console.log(err)
+                    return res.status(404).send('Failed to register!');
+                }
+                // console.log(result);
+                res.status(201).send('Success!');
+                return;
+            });
         });
-        newUser.save((err, result) => {
-            if(err) {
-                console.log(err)
-                return res.status(404).send('Failed to register!');
-            }
-            // console.log(result);
-            res.status(201).send('Success!');
-            return;
-        });
-    });
+    })
 });
-
 
 
 module.exports = stories
