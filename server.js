@@ -23,6 +23,7 @@ app.use(session({
     saveUninitialized: true,
     resave: true,
     name: 'nogsuuu',
+    proxy: true,
     secret: process.env.SESSION_SECRET || "nogsuu",
     unset: 'destroy',
     cookie: {
